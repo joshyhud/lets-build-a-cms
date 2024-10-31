@@ -15,15 +15,29 @@ export const postType = defineType({
       name: 'slug',
       type: 'slug',
       // Add in a generate button on slug which will create slug based on page title
-      options: {source: 'name'},
+      options: {source: 'post_title'},
       // Make Slug a required field
       validation: (rule) => rule.required().error(`Required to generate a page on the website`),
-      hidden: ({document}) => !document?.name,
+    }),
+    defineField({
+      name: 'author',
+      type: 'reference',
+      to: [{type: 'users'}],
+    }),
+    defineField({
+      name: 'publishedAt',
+      type: 'datetime',
+      title: 'Published at',
+    }),
+    defineField({
+      name: 'categories',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'postCategory'}]}],
     }),
     defineField({
       name: 'Content',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'block'}, {type: 'image'}],
     }),
   ],
 })
