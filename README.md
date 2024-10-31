@@ -61,3 +61,28 @@ Follow the prompts to deploy your studio to [Sanity.io](https://www.sanity.io/).
 ### 🔧 Configuration
 
 You can configure your Sanity Studio by editing the `sanity.json` file in the root of your project. Refer to the [Sanity documentation](https://www.sanity.io/docs) for more details.
+
+### 🛠️ Environment Variables
+
+Sanity Studio uses environment variables to manage configuration settings. You can set these variables by creating a `.env` file in the root of your project. Here is an example of what the `.env` file might look like:
+
+```env
+SANITY_STUDIO_PROJECT_ID=your-project-id
+SANITY_STUDIO_DATASET=your-dataset
+```
+
+To use these variables in your project, ensure you have the `dotenv` package installed:
+
+```bash
+npm install dotenv
+# or
+yarn add dotenv
+```
+
+Then, import and configure `dotenv` at the beginning of your main configuration file (e.g., `sanity.config.js`):
+
+```javascript
+require('dotenv').config()
+```
+
+Refer to the [Sanity documentation](https://www.sanity.io/docs) for more details on configuring environment variables.
