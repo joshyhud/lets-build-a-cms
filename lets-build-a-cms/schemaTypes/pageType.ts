@@ -67,11 +67,11 @@ export const pageType = defineType({
       group: 'pagemeta',
       of: [{type: 'reference', to: [{type: 'pageCategory'}]}],
     }),
-    defineField({
-      name: 'seo',
-      type: 'seoFields',
-      group: 'seo',
-    }),
+    // defineField({
+    //   name: 'seo',
+    //   type: 'seoFields',
+    //   group: 'seo',
+    // }),
   ],
   preview: {
     select: {
